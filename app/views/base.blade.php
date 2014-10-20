@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Darkened</title>
+<title>Steven Smith - {{{ isset($title) ? $title : 'Home' }}}</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 {{ HTML::style('css/default.css') }}
 </head>
@@ -10,7 +10,7 @@
   <h1>Steven Smith</h1>
   <h2>Menu</h2>
   <ul>
-    <li class="first"><a href="#" accesskey="1">Home</a></li>
+    <li class="{{ $currentpagehome or '' }}"><a href="#" accesskey="1">Home</a></li>
     <li><a href="#" accesskey="2">Resume</a></li>
     <li><a href="#" accesskey="3">Blog</a></li>
     <li><a href="#" accesskey="5">Contact</a></li>
@@ -32,14 +32,7 @@
     <p><img src="images/img6.jpg" alt="" width="179" height="59" /></p>
     <p>Vestibulum pellentesque. Morbi sit amet magna ac lacus dapibus interdum. Donec <a href="#">pede nisl gravida</a> iaculis, auctor vitae, bibendum sit amet, mauris. Cras adipiscing libero et risus. Donec rutrum. <a href="#">More&#8230;</a></p>
   </div>
-  <div id="colTwo">
-    <h2>Welcome</h2>
-    <img src="images/img7.jpg" alt="" width="114" height="104" style="float: left; margin-right: 25px;" />
-    <p>Darkened is a free template from Free CSS Templates released under a <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>. The photo to the left is from PDPhoto.org. You're free to use this template for both commercial or personal use. I only ask that you link back to my site in some way. Enjoy :)</p>
-    <p>Sed vel quam. Vestibulum pellentesque. Morbi sit amet magna ac lacus dapibus mauris sed elit venenatis porttitor. Morbi quam nisl, fringilla quis, sagittis nec, adipiscing at, elit. Maecenas sed sem sit amet lectus mattis molestie. Integer quis eros lorem ipsum dolor sit amet veroeros consequat.</p>
-    <p>&nbsp;</p>
-    <h2>Blandit Etiam</h2>
-    <p>Sed vel quam. Vestibulum pellentesque. Morbi sit amet <a href="#">magna ac lacus</a> dapibus interdum. Donec pede nisl, gravida iaculis, auctor vitae, bibendum sit amet, mauris. Cras adipiscing libero et risus. Donec rutrum tempus massa. Proin at mauris sed elit venenatis porttitor. Morbi quam nisl, fringilla quis, sagittis nec, adipiscing at, elit. Maecenas <a href="#">sed sem sit amet lectus</a> mattis molestie. Integer quis eros lorem ipsum dolor sit amet veroeros consequat.</p>
+  <div id="colTwo" style="border:1px;border-color:red;height:100px;width:100px;">    
   </div>
 </div>
 <div id="footer">
