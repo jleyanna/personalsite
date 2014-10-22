@@ -1,42 +1,46 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<title>Steven Smith - {{{ isset($title) ? $title : 'Home' }}}</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-{{ HTML::style('css/default.css') }}
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<style type="text/css">
+// Classes
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Usage as mixins
+.element {
+  .center-block();
+}
+.inline-blocks {
+   vertical-align: middle;
+   display: inline-block;
+}
+.nav {
+    margin-top: 1.5em;
+}
+#header-text {
+    height: 5em;
+}
+</style>
 </head>
 <body>
-<div id="header">
-  <h1>Steven Smith</h1>
-  <h2>Menu</h2>
-  <ul>
-    <li class="{{ $currentpagehome or '' }}"><a href="#" accesskey="1">Home</a></li>
-    <li><a href="#" accesskey="2">Resume</a></li>
-    <li><a href="#" accesskey="3">Blog</a></li>
-    <li><a href="#" accesskey="5">Contact</a></li>
-  </ul>
+<div class="col-md-6 col-md-offset-3" id="header-text">
+<div class="h1 col-md-4">Steven Smith</div>
+<div class="col-md-3">
+<ul class="nav nav-pills">
+    <li><a href="#">Resume</a></li>
+    <li><a href="#">Blog</a></li>
+</ul>
 </div>
-<div id="content">
-  <div id="colOne">
-    <h3>Links</h3>
-    <ul class="list">
-      <li class="first"><img src="images/github.png" height="20" width="20"><a href="#">GitHub - Kodemaan</a></li>
-      <li><a href="#">Nulla dignissim nec augue</a></li>
-      <li><a href="#">Nunc ante elit nulla</a></li>
-      <li><a href="#">Aliquam suscipit consequat</a></li>
-      <li><a href="#">Cursus sed arcu sed</a></li>
-      <li><a href="#">Nulla dignissim nec augue</a></li>
-    </ul>
-    <p>&nbsp;</p>
-    <h3>Consequat Portitor</h3>
-    <p><img src="images/img6.jpg" alt="" width="179" height="59" /></p>
-    <p>Vestibulum pellentesque. Morbi sit amet magna ac lacus dapibus interdum. Donec <a href="#">pede nisl gravida</a> iaculis, auctor vitae, bibendum sit amet, mauris. Cras adipiscing libero et risus. Donec rutrum. <a href="#">More&#8230;</a></p>
-  </div>
-  <div id="colTwo" style="border:1px;border-color:red;height:100px;width:100px;">    
-  </div>
 </div>
-<div id="footer">
-  <p style="font-size:7px">Design by <a href="http://freecsstemplates.org/">Free CSS Templates</a>.</p>
+<div class="col-md-12">
+<hr>
+</div>
+<div class="col-md-6 col-md-offset-3">
+@yield('content','If you see me please contact kodemaan@gmail.com, Thank you and sorry for the inconveniece. ')
 </div>
 </body>
 </html>

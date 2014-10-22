@@ -17,8 +17,7 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		$data['currentpagehome'] = 'first';
-		return View::make('base', $data);
+		return View::make('home');
 	}
 
 }
