@@ -1,7 +1,8 @@
 <html>
 <head>
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{{ HTML::style('http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css') }}
+{{ HTML::style('css/base.css') }}
+{{ HTML::script('http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js') }}
 <style type="text/css">
 // Classes
 .center-block {
@@ -18,21 +19,16 @@
    vertical-align: middle;
    display: inline-block;
 }
-.nav {
-    margin-top: 1.5em;
-}
-#header-text {
-    height: 5em;
-}
+
 </style>
 </head>
 <body>
 <div class="col-md-6 col-md-offset-3" id="header-text">
-<div class="h1 col-md-4">Steven Smith</div>
-<div class="col-md-3">
+<div class="h1 col-md-4"><a href="{{ route('home') }}" id="hometext">Steven Smith</a></div>
+<div class="col-md-3 pull-right">
 <ul class="nav nav-pills">
-    <li><a href="#">Resume</a></li>
-    <li><a href="#">Blog</a></li>
+    <li><a href="{{ route('resume') }}">Resume</a></li>
+    <li><a href="{{ route('blog') }}">Blog</a></li>
 </ul>
 </div>
 </div>
