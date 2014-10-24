@@ -194,4 +194,7 @@ return array(
 
 	),
 
+    //Setting my email address for potential errors, and other things
+    'admin-email' => 'kodemaan@gmail.com',
+
 );
