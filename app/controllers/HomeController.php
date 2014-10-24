@@ -30,4 +30,9 @@ class HomeController extends BaseController {
         return View::make('blog');
     }
 
+    public function showTest()
+    {
+        return View::make('test');
+    }
+
 }

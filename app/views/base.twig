@@ -18,7 +18,7 @@
 <hr>
 </div>
 <div class="col-md-6 col-md-offset-3">
-{% block content %}If you see me please contact kodemaan@gmail.com, Thank you and sorry for the inconvenience{% endblock %}
+{% block content %}If you see me please contact {{ config_get('app.admin-email') }}, Thank you and sorry for the inconvenience{% endblock %}
 </div>
 </body>
 </html>
