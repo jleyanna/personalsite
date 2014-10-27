@@ -1,6 +1,6 @@
 <?php
 
-class ResumeController extends BaseController
+class BlogController extends BaseController
 {
 
     public function showBlog()
