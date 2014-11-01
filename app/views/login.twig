@@ -1,0 +1,7 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {{ Form::open(array('action'=>'LoginController@postLogin')) }}
+
+    {{ Form::close() }}
+{% endblock %}

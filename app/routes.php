@@ -14,3 +14,4 @@
 Route::get('/', array('as'=>'home', 'uses' => 'HomeController@showWelcome'));
 Route::get('/resume', array('as'=>'resume', 'uses' => 'ResumeController@showResume'));
 Route::get('/blog', array('as'=>'blog', 'uses' => 'HomeController@showBlog'));
+Route::get('/login', array('as'=>'login', 'uses' => 'LoginController@showLogin'));
