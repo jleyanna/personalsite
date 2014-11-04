@@ -1,7 +1,16 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    {{ Form::open(array('action'=>'LoginController@postLogin')) }}
-
-    {{ Form::close() }}
+    {{ form_open({'route':'postlogin'}) }}
+    {% for messages in errors.toArray() %}
+        {% for message in messages %}
+            {{ message }}<br>
+        {% endfor %}
+    {%  endfor %}
+    {{ form_label('username', 'Username:') }}
+    {{ form_text('username') }}<br>
+    {{ form_label('password', 'Password:') }}
+    {{ form_password('password') }}<br>
+    {{ form_submit('Login') }}
+    {{ form_close() }}
 {% endblock %}

@@ -22,6 +22,21 @@ class LoginController extends BaseController
 
     public function postLogin()
     {
+        $rules = array(
+            'username' => 'required',
+            'password' => 'required'
+        );
+
+        if (Input::has('username'))
+        {
+            $username = Input::get('username');
+        }
+        $validator = Validator::make(Input::all(),$rules);
+
+        if ($validator->fails())
+        {
+            return Redirect::to('login')->withErrors($validator)->withInput(Input::except('password'));
+        }
         
     }
 
