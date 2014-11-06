@@ -16,3 +16,6 @@ Route::get('/resume', array('as'=>'resume', 'uses' => 'ResumeController@showResu
 Route::get('/blog', array('as'=>'blog', 'uses' => 'BlogController@showBlog'));
 Route::get('/login', array('as'=>'login', 'uses' => 'LoginController@showLogin'));
 Route::post('/login', array('as' => 'postlogin', 'uses' => 'LoginController@postLogin'));
+Route::get('/manage', array('as' => 'manageuser', 'uses' => 'UserController@showManage'));
+Route::post('/manage', array('as' => 'manageuser', 'uses' => 'UserController@postManage'));
+Route::get('/logout', array('as' => 'logout', 'uses' => 'LoginController@showLogout'));

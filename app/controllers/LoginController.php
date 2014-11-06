@@ -37,7 +37,18 @@ class LoginController extends BaseController
         {
             return Redirect::to('login')->withErrors($validator)->withInput(Input::except('password'));
         }
-        
+        if (Auth::attempt(array('username'=>$username,'password'=>Input::get('password'))))
+        {
+            return Redirect::route('home');
+        }
+        return Redirect::route('home');
     }
+
+    public function showLogout()
+    {
+        Auth::logout();
+        return Redirect::route('home');
+    }
+
 
 }
