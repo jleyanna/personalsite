@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {{ form_open({'route':'manageuser'}) }}
+    <div class="row">>
+    <div class="col-md-3">
+        {{ form_label('username', 'Username:') }}<br>
+        {{ form_label('email', 'Email:') }}<br>
+        {{ form_label('password', 'Password:') }}<br>
+        {{ form_label('confirmpassword', 'Confirm Password:') }}<br>
+    </div>
+    <div class="col-md-1">
+        {{ username }}<br>
+        {{ form_text('email',email) }}<br>
+        {{ form_password('password') }}<br>
+        {{ form_password('confirmpassword') }}<br>
+        {{ form_submit('Login') }}
+        {{ form_close() }}
+    </div>
+    </div>
+
+{% endblock %}
