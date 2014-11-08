@@ -36,9 +36,11 @@ class AdminController extends BaseController
         }
         $user = new User;
         $user->username = Input::get('username');
+        $user->firstname = Input::get('firstname');
+        $user->lastname = Input::get('lastname');
         $user->email = Input::get('email');
         $user->password = Hash::make(Input::get('password'));
-        $user->addRoleById(Input::get('role'));
         $user->save();
+        $user->roles()->attach(Role::find(Input::get('role')));
     }
 }

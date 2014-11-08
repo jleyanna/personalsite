@@ -10,6 +10,8 @@
     {{ form_open({'route':'adminuserpost'}) }}
     <div class="col-md-3">
         {{ form_label('username', 'Username:') }}<br>
+        {{ form_label('firstname', 'First Name:') }}<br>
+        {{ form_label('lastname', 'Last Name:') }}<br>
         {{ form_label('email', 'Email:') }}<br>
         {{ form_label('password', 'Password:') }}<br>
         {{ form_label('password_confirmation', 'Confirm Password:') }}<br>
@@ -17,6 +19,8 @@
     </div>
     <div class="col-md-1">
         {{ form_text('username',username) }}<br>
+        {{ form_text('firstname') }}<br>
+        {{ form_text('lastname') }}<br>
         {{ form_text('email',email) }}<br>
         {{ form_password('password') }}<br>
         {{ form_password('password_confirmation') }}<br>
