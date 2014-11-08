@@ -1,0 +1,44 @@
+<?php
+
+class AdminController extends BaseController
+{
+
+    public function showHome()
+    {
+
+        return View::make('admin_home',array('roles'=>$rolesnew));
+    }
+
+    public function showAddUser()
+    {
+        $roles = Role::all()->toArray();
+        $rolesnew[] = ' ';
+        foreach ($roles as $role)
+        {
+            $rolesnew[$role['id']] = $role['name'];
+        }
+        return View::make('admin_adduser',array('roles'=>$rolesnew));
+    }
+
+    public function postAddUser()
+    {
+        $rules = array(
+            'username' => 'required|unique:users',
+            'password' => 'required|confirmed',
+            'email' => 'required|email',
+        );
+
+        $validator = Validator::make(Input::all(),$rules);
+
+        if ($validator->fails())
+        {
+            return Redirect::route('adminuser')->withErrors($validator)->withInput(Input::except('password'));
+        }
+        $user = new User;
+        $user->username = Input::get('username');
+        $user->email = Input::get('email');
+        $user->password = Hash::make(Input::get('password'));
+        $user->addRoleById(Input::get('role'));
+        $user->save();
+    }
+}

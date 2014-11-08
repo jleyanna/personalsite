@@ -19,3 +19,6 @@ Route::post('/login', array('as' => 'postlogin', 'uses' => 'LoginController@post
 Route::get('/manage', array('as' => 'manageuser', 'uses' => 'UserController@showManage'));
 Route::post('/manage', array('as' => 'manageuser', 'uses' => 'UserController@postManage'));
 Route::get('/logout', array('as' => 'logout', 'uses' => 'LoginController@showLogout'));
+Route::get('/admin', array('as' => 'admin', 'uses' => 'AdminController@showHome'));
+Route::get('/admin/user', array('as' => 'adminuser', 'uses' => 'AdminController@showAddUser'));
+Route::post('/admin/user', array('as' => 'adminuserpost', 'uses' => 'AdminController@postAddUser'));

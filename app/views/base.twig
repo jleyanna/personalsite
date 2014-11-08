@@ -7,12 +7,15 @@
 <body>
 <div class="col-md-7 col-md-offset-2 col-sm-12" id="header-text">
 <div class="h1 col-md-4 col-sm-12" id="headertext"><a href="{{ route('home') }}" id="hometext">Steven Smith</a></div>
-<div class="col-md-5 col-md-offset-3 col-sm-12">
+<div class="col-md-7 col-md-offset-1 col-sm-12">
 <ul class="nav nav-pills">
     <li><a href="{{ route('resume') }}">Resume</a></li>
     <li><a href="{{ route('blog') }}">Blog</a></li>
     {% if auth_check() %}
     <li><a href="{{ route('manageuser') }}">{{ auth_user().username }}</a></li>
+    {% if auth_user().hasRole('Admin') %}
+    <li><a href="{{ route('admin') }}">Admin</a></li>
+    {% endif %}
     <li><a href="{{ route('logout') }}">Logout</a></li>
     {% else %}
     <li><a href="{{ route('login') }}">Login</a></li>

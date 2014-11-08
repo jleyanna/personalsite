@@ -1,0 +1,28 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <h2>Add a user</h2>
+    {% for messages in errors.toArray() %}
+        {% for message in messages %}
+            {{ message }}<br>
+        {% endfor %}
+    {%  endfor %}
+    {{ form_open({'route':'adminuserpost'}) }}
+    <div class="col-md-3">
+        {{ form_label('username', 'Username:') }}<br>
+        {{ form_label('email', 'Email:') }}<br>
+        {{ form_label('password', 'Password:') }}<br>
+        {{ form_label('password_confirmation', 'Confirm Password:') }}<br>
+        {{ form_label('role') }}
+    </div>
+    <div class="col-md-1">
+        {{ form_text('username',username) }}<br>
+        {{ form_text('email',email) }}<br>
+        {{ form_password('password') }}<br>
+        {{ form_password('password_confirmation') }}<br>
+        {{ form_select('role',roles, 0) }}
+        {{ form_submit('Login') }}
+        {{ form_close() }}
+    </div>
+    {{ form_close() }}
+{% endblock %}
