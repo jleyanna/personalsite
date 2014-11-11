@@ -5,8 +5,7 @@ class AdminController extends BaseController
 
     public function showHome()
     {
-
-        return View::make('admin_home',array('roles'=>$rolesnew));
+        return View::make('admin_home');
     }
 
     public function showAddUser()
@@ -42,5 +41,11 @@ class AdminController extends BaseController
         $user->password = Hash::make(Input::get('password'));
         $user->save();
         $user->roles()->attach(Role::find(Input::get('role')));
+    }
+
+    public function showManageUser()
+    {
+        $users = User::all();
+        return View::make('admin_manageuser',array('users'=>$users));
     }
 }

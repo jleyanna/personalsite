@@ -22,3 +22,8 @@ Route::get('/logout', array('as' => 'logout', 'uses' => 'LoginController@showLog
 Route::get('/admin', array('as' => 'admin', 'uses' => 'AdminController@showHome'));
 Route::get('/admin/user', array('as' => 'adminuser', 'uses' => 'AdminController@showAddUser'));
 Route::post('/admin/user', array('as' => 'adminuserpost', 'uses' => 'AdminController@postAddUser'));
+Route::get('/admin/manageuser',array('as'=>'adminusermanage', 'uses' => 'AdminController@showManageUser'));
+Route::get('/user/{id}/edit',array('as'=>'adminmanagesingleuser',function($id) {
+    $usercontroller = new UserController();
+    return $usercontroller->showUserManage($id);
+}));

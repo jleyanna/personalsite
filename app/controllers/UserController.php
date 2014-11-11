@@ -36,4 +36,8 @@ class UserController extends Controller
         return Redirect::route('manageuser');
     }
 
+    public function showUserManage($id) {
+        $user = User::find($id);
+    }
+
 }
