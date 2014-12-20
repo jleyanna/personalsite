@@ -4,4 +4,21 @@
    {% for user in users %}
        <li><a href="/user/{{ user.id }}/edit">{{ user.username }}</a></li>
    {% endfor %}
+    <div id="epiceditor"></div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{{ html_script('epiceditor/js/epiceditor.min.js') }}
+{%  endblock %}
+
+{% block inlinejs %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var opt = {
+                basePath: '/epiceditor'
+            };
+            var editor = new EpicEditor(opt).load();
+        });
+    </script>
 {% endblock %}

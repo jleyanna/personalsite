@@ -1,8 +1,14 @@
 <html>
 <head>
+    {%  block javascripts %}
 {{ html_style('http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css') }}
 {{ html_style('css/base.css') }}
+{{ html_script('https://code.jquery.com/jquery-2.1.3.min.js') }}
 {{ html_script('http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js') }}
+    {%  endblock %}
+    {% block inlinejs %}
+
+    {%  endblock %}
 </head>
 <body>
 <div class="col-md-7 col-md-offset-2 col-sm-12" id="header-text">
